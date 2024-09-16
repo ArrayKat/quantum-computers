@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.myapplication.view.screens.home.Home
 import com.example.myapplication.view.screens.signIn.SignIn
 import com.example.myapplication.view.screens.splash.Splash
 
@@ -19,6 +20,9 @@ fun Navigation(){
         }
         composable("signIn"){
             SignIn(controller)
+        }
+        composable("home"){
+            Home(controller)
         }
     }
 

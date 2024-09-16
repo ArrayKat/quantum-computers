@@ -60,13 +60,8 @@ fun Splash(navHostController: NavHostController) {
         }
     }
 
-
-
-
-
-
     LaunchedEffect(true) {
-        delay(5000)
+        delay(1000)
         navHostController.navigate("signIn") {
             popUpTo("splash") { //заканчиваем жизненный цикл экрана сплэш
                 inclusive = true

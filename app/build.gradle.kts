@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose.compiler)
     kotlin("plugin.serialization") version "2.0.20"
 }
 
@@ -83,5 +84,6 @@ dependencies {
 
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
+    implementation("io.coil-kt:coil-compose:2.7.0")
 
 }

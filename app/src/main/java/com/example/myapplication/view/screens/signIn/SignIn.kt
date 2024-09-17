@@ -20,6 +20,8 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -28,10 +30,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.myapplication.domain.MainViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SignIn(navHostController: NavHostController){
+    val viewModel = MainViewModel()
+    val email = remember { mutableStateOf("") }
+    val password = remember { mutableStateOf("") }
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -55,8 +61,8 @@ fun SignIn(navHostController: NavHostController){
 
             // Поле для ввода email
             TextField(
-                value = "",
-                onValueChange = { /* Обработка изменения текста */ },
+                value = email.value,
+                onValueChange = { newText -> email.value = newText},
                 label = { Text("Email") },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -67,27 +73,21 @@ fun SignIn(navHostController: NavHostController){
                 )
             // Поле для ввода passwords
             TextField(
-                value = "",
-                onValueChange = { /* Обработка изменения текста */ },
+                value = password.value,
+                onValueChange = { newText->password.value = newText },
                 label = { Text("Password") },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp)
                     .clip(RoundedCornerShape(10.dp))
                     .background(color = MaterialTheme.colorScheme.secondary),
-
                 )
-
             Spacer(modifier = Modifier.height(32.dp))
 
             // Кнопка "Log In"
             Button(
                 onClick = {
-                    navHostController.navigate("home"){
-                        popUpTo("sigIn"){
-                            inclusive = true
-                        }
-                    }
+                    viewModel.sigIn(email.value, password.value, navHostController)
                 },
                 modifier = Modifier
                     .fillMaxWidth()

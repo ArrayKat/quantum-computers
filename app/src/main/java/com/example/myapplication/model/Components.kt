@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 data class Components (
     val id: Int,
     val name: String,
-    val descriptor: String,
+    val description: String,
     val image_url: String?,
     val category: Int
 )

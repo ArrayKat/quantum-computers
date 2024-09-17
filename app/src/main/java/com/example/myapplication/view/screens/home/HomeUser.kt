@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -40,25 +42,29 @@ import kotlinx.coroutines.withContext
 
 @Composable
 fun HomeUser(navHostController: NavHostController){
-
+    val scrollState = rememberScrollState()
     var componentsList by remember { mutableStateOf<List<Components>>(listOf()) } //получили список компонентов
     LaunchedEffect(Unit) { //делаем при первом запуске
         withContext(Dispatchers.IO) {
-            componentsList = Constants.supabase.from("Components")
-                .select().decodeList<Components>() //выбираем из супабейз данные и запихиваем в лист
-            componentsList.forEach{it->
-                Log.d("C",it.name) //для удобного поиска ошибки? в logcats
+            try {
+                componentsList = Constants.supabase.from("Components")
+                    .select().decodeList<Components>() //выбираем из супабейз данные и запихиваем в лист
+                Log.d("C",componentsList.toString())
+                componentsList.forEach{it->
+                    Log.d("C",it.name) //для удобного поиска ошибки? в logcats
+                }
+            } catch (e: Exception){
+                Log.d("C", e.message.toString())
             }
         }
 
     }
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(color = MaterialTheme.colorScheme.primary)
-    ) {
-        LazyColumn {
+
+        LazyColumn (
+            modifier = Modifier
+                .background(color = MaterialTheme.colorScheme.primary)
+        ){
 
             items(
                 componentsList,
@@ -81,16 +87,19 @@ fun HomeUser(navHostController: NavHostController){
                     Image(
                         painter = imageState.painter,
                         contentDescription = "",
-                        contentScale = ContentScale.Crop,
+//                        contentScale = ContentScale.Crop,
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(200.dp)
-                            .background(color = Color.Red)
                     )
                 }
+                Text(
+                    text = component.name,
+                    modifier = Modifier.padding(8.dp),
+                )
             }
         }
-    }
+
 
 
 //    Text(

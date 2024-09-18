@@ -1,5 +1,6 @@
 package com.example.myapplication.view.screens.splash
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -26,6 +27,11 @@ import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.myapplication.R
+import com.example.myapplication.domain.utils.Constants
+import com.example.myapplication.model.Role
+import com.example.myapplication.model.User
+import io.github.jan.supabase.gotrue.auth
+import io.github.jan.supabase.postgrest.from
 import kotlinx.coroutines.delay
 
 @Composable
@@ -60,13 +66,26 @@ fun Splash(navHostController: NavHostController) {
         }
     }
 
-    LaunchedEffect(true) {
+    LaunchedEffect(Unit) {
         delay(1000)
-        navHostController.navigate("signIn") {
-            popUpTo("splash") { //заканчиваем жизненный цикл экрана сплэш
-                inclusive = true
+
+        val user = Constants.supabase.auth.currentUserOrNull()?.id
+        Log.e("hren'", user.toString())
+        if(user != null){
+            navHostController.navigate("homeUser") {
+                popUpTo("splash") { //заканчиваем жизненный цикл экрана сплэш
+                    inclusive = true
+                }
+            }
+        } else {
+            navHostController.navigate("signIn") {
+                popUpTo("splash") { //заканчиваем жизненный цикл экрана сплэш
+                    inclusive = true
+                }
             }
         }
+
+
     }
 
 }

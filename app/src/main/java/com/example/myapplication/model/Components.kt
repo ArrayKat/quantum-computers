@@ -8,5 +8,7 @@ data class Components (
     val name: String,
     val description: String,
     val image_url: String?,
-    val category: Int
+    val category: Int,
+    val cost: Int,
+    val count:Int
 )

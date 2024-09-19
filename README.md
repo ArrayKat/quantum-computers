@@ -31,6 +31,4 @@
 |-------------|--------------|--------------|
 | Администратор |admin@mail.ru| admin |
 | Пользователь| user@mail.ru | user|
-## Автор
-[Gogs](http://gogs.ngknn.ru:3000/ArrayKat2)
-[GitHub](https://github.com/ArrayKat)
+

@@ -70,7 +70,7 @@ fun Splash(navHostController: NavHostController) {
         delay(1000)
 
         val user = Constants.supabase.auth.currentUserOrNull()?.id
-        Log.e("hren'", user.toString())
+        Log.e("UserIsNull", user.toString())
         if(user != null){
             navHostController.navigate("homeUser") {
                 popUpTo("splash") { //заканчиваем жизненный цикл экрана сплэш

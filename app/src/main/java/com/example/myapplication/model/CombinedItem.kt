@@ -2,6 +2,6 @@ package com.example.myapplication.model
 
 
 data class CombinedItem(
-    val component: Components,
-    val categoryName: String
+    val component: Components? = null,
+    val categoryName: String = ""
 )

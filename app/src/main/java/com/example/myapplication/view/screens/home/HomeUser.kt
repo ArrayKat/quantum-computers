@@ -204,14 +204,15 @@ Box(modifier = Modifier
                     ){
                         Text(
                             softWrap = true,
-                            text = "Цена: "+ component.component.cost,
+                            text = component.component.cost.toString() + " р.",
                             modifier = Modifier.padding(8.dp),
                             overflow = TextOverflow.Visible,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 18.sp,
+                            fontSize = 20.sp,
                             color = MaterialTheme.colorScheme.primary,
 
                         )
+
                         Text(
                             softWrap = true,
                             text = "Кол-во: "+ component.component.count,
@@ -221,6 +222,8 @@ Box(modifier = Modifier
                             color = MaterialTheme.colorScheme.primary,
 
                         )
+
+
                     }
                     if (role == "Администратор") {
                         Button(

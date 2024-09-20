@@ -80,12 +80,13 @@ fun SignIn(navHostController: NavHostController){
             TextField(
                 value = email.value,
                 onValueChange = { newText -> email.value = newText},
-                label = { Text("Email") },
+                label = { Text("Email")},
                 colors = TextFieldDefaults.colors(
                     focusedContainerColor = MaterialTheme.colorScheme.secondary,
                     unfocusedContainerColor = MaterialTheme.colorScheme.secondary,
                     focusedTextColor = Color.White,
                     unfocusedLabelColor = Color.White,
+                    unfocusedTextColor = Color.White,
                     focusedLabelColor = Color.White
                 ),
                 modifier = Modifier

@@ -9,7 +9,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.myapplication.model.CombinedItem
-import com.example.myapplication.model.SelectedComponent
 import com.example.myapplication.view.screens.cardsComponents.CardComponent
 import com.example.myapplication.view.screens.home.HomeUser
 import com.example.myapplication.view.screens.signIn.SignIn

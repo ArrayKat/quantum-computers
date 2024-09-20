@@ -165,8 +165,8 @@ fun CardComponent(navHostController: NavHostController, nameComponent:Int){
                                 .clip(RoundedCornerShape(10.dp))
                                 .background(color = Color.White),
                             colors = TextFieldDefaults.colors(
-                                focusedContainerColor = MaterialTheme.colorScheme.secondary,
-                                unfocusedContainerColor = MaterialTheme.colorScheme.secondary,
+                                focusedContainerColor = MaterialTheme.colorScheme.primary,
+                                unfocusedContainerColor = MaterialTheme.colorScheme.primary,
                                 focusedTextColor = Color.White,
                                 unfocusedLabelColor = Color.White,
                                 unfocusedTextColor = Color.White,
@@ -186,8 +186,8 @@ fun CardComponent(navHostController: NavHostController, nameComponent:Int){
                                 .clip(RoundedCornerShape(10.dp))
                                 .background(color = Color.White),
                             colors = TextFieldDefaults.colors(
-                                focusedContainerColor = MaterialTheme.colorScheme.secondary,
-                                unfocusedContainerColor = MaterialTheme.colorScheme.secondary,
+                                focusedContainerColor = MaterialTheme.colorScheme.primary,
+                                unfocusedContainerColor = MaterialTheme.colorScheme.primary,
                                 focusedTextColor = Color.White,
                                 unfocusedLabelColor = Color.White,
                                 unfocusedTextColor = Color.White,
@@ -214,8 +214,8 @@ fun CardComponent(navHostController: NavHostController, nameComponent:Int){
                                 .clip(RoundedCornerShape(10.dp))
                                 .background(color = Color.White),
                             colors = TextFieldDefaults.colors(
-                                focusedContainerColor = MaterialTheme.colorScheme.secondary,
-                                unfocusedContainerColor = MaterialTheme.colorScheme.secondary,
+                                focusedContainerColor = MaterialTheme.colorScheme.primary,
+                                unfocusedContainerColor = MaterialTheme.colorScheme.primary,
                                 focusedTextColor = Color.White,
                                 unfocusedLabelColor = Color.White,
                                 unfocusedTextColor = Color.White,
@@ -245,8 +245,8 @@ fun CardComponent(navHostController: NavHostController, nameComponent:Int){
                                 .clip(RoundedCornerShape(10.dp))
                                 .background(color = Color.White),
                             colors = TextFieldDefaults.colors(
-                                focusedContainerColor = MaterialTheme.colorScheme.secondary,
-                                unfocusedContainerColor = MaterialTheme.colorScheme.secondary,
+                                focusedContainerColor = MaterialTheme.colorScheme.primary,
+                                unfocusedContainerColor = MaterialTheme.colorScheme.primary,
                                 focusedTextColor = Color.White,
                                 unfocusedLabelColor = Color.White,
                                 focusedLabelColor = Color.White,

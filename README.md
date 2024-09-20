@@ -3,15 +3,7 @@
 Мобильное приложение для компании "Quantum Computers", которая занимается продажей комплектующих.
 
 ## Установка
-1. Склонировать проект 
-   1.1. Дома:
-    ```bash
-    git clone http://gogs.ngknn.ru:3000/ArrayKat2/QuantumComputers.
-    ```
-   1.2. В колледже:
-   ```bash
-   git clone http://gogs.ngknn.local:3000/ArrayKat2/QuantumComputers.git
-   ```
+1. Склонировать проект или скачать zip-архивом 
 2. Открыть проект в Android Stusio
 3. Собрать проект на вашем мобильном устройстве
 
